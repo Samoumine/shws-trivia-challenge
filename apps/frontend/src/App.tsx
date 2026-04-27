@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import "./App.css";
 import { fetchTriviaQuestions } from "./api/triviaApi";
 import type {
@@ -330,17 +330,33 @@ function App() {
           </div>
 
           <div className="form-grid">
-            <label>
-              Number of questions
+            <label className="range-field">
+              <div className="range-label-row">
+                <span>Number of questions</span>
+                <strong>{settings.amount}</strong>
+              </div>
+
               <input
-                type="number"
-                min="1"
+                className="question-range"
+                type="range"
+                min="5"
                 max="50"
+                step="1"
                 value={settings.amount}
+                style={
+                  {
+                    "--range-progress": `${((settings.amount - 5) / 45) * 100}%`,
+                  } as CSSProperties
+                }
                 onChange={(event) =>
                   updateSettings("amount", Number(event.target.value))
                 }
               />
+
+              <div className="range-min-max">
+                <span>5</span>
+                <span>50</span>
+              </div>
             </label>
 
             {settings.mode !== "random" && (

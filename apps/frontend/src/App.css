@@ -136,12 +136,11 @@ select {
 
 input:focus,
 select:focus {
-  outline: 3px solid #fecaca;
   border-color: #dc2626;
 }
 
 .primary-button {
-  justify-self: start;
+  justify-self: center;
   padding: 14px 22px;
   background: #dc2626;
   border: none;
@@ -463,6 +462,106 @@ select:focus {
 .win-popover span {
   color: #6b7280;
   font-weight: 700;
+}
+
+.range-field {
+  grid-column: 1 / -1;
+  width: min(620px, 100%);
+  margin: 8px auto 0;
+  gap: 16px;
+}
+
+.range-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: #7f1d1d;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.range-label-row strong {
+  display: inline-grid;
+  place-items: center;
+  min-width: 52px;
+  padding: 8px 14px;
+  background: #dc2626;
+  border-radius: 999px;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(220, 38, 38, 0.24);
+}
+
+.question-range {
+  width: 100%;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.question-range::-webkit-slider-runnable-track {
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    #dc2626 0%,
+    #dc2626 var(--range-progress),
+    #fee2e2 var(--range-progress),
+    #fee2e2 100%
+  );
+  border: 2px solid #fecaca;
+}
+
+.question-range::-webkit-slider-thumb {
+  width: 32px;
+  height: 32px;
+  margin-top: -12px;
+  background: #ffffff;
+  border: 7px solid #dc2626;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 6px #ffffff,
+    0 12px 28px rgba(127, 29, 29, 0.28);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.question-range::-moz-range-track {
+  height: 12px;
+  border-radius: 999px;
+  background: #fee2e2;
+  border: 2px solid #fecaca;
+}
+
+.question-range::-moz-range-progress {
+  height: 12px;
+  border-radius: 999px;
+  background: #dc2626;
+}
+
+.question-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border: 7px solid #dc2626;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 6px #ffffff,
+    0 12px 28px rgba(127, 29, 29, 0.28);
+  cursor: pointer;
+}
+
+.range-min-max {
+  display: flex;
+  justify-content: space-between;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 @keyframes questionSlideIn {
