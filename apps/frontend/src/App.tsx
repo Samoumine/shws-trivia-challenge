@@ -237,7 +237,7 @@ function App() {
 
       window.setTimeout(() => {
         setShowWinPopover(false);
-      }, 2200);
+      }, 2600);
     }
 
     setAnswerHistory((previousHistory) => [
